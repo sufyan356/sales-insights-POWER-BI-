@@ -50,7 +50,7 @@
     
 # Power BI Sales Insights Report
   ### DAX Formulas for Analysis
-    To enhance the Power BI report, advanced DAX formulas were implemented, enabling deeper insights into sales and profitability. Below are key formulas used:
+    `To enhance the Power BI report, advanced DAX formulas were implemented, enabling deeper insights into sales and profitability. Below are key formulas used:`
 
 `Profit Margin Contribution Percentage:`
   `
