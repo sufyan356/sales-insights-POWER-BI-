@@ -53,7 +53,7 @@
     To enhance the Power BI report, advanced DAX formulas were implemented, enabling deeper insights into sales and profitability.
     Below are key formulas used:
 
-### Profit Margin Contribution Percentage:
+### 1. Profit Margin Contribution Percentage:
   `
     Profit Margin Contribution Percentage = 
     DIVIDE(
@@ -67,3 +67,64 @@
         0
     )
   `
+
+### 2. Profit Margins:
+`
+profit_margins = DIVIDE([total_profit_margin], [revenue], 0)
+`
+
+### 3. Revenue:
+`
+revenue = SUM('sales transactions_duplicate'[currency_normalization])
+`
+
+### 4. Revenue Margin Contribution Percentage::
+`
+Revenue Margin Contribution Percentage = 
+DIVIDE(
+    [revenue],
+    CALCULATE(
+        [revenue],
+        ALL('sales products_duplicate'),
+        ALL('sales customers_duplicate'),
+        ALL('sales markets_duplicate')
+    ),
+    0
+)
+
+### 5. Revenue Last Year:
+`
+revenue_last_year = CALCULATE([revenue], SAMEPERIODLASTYEAR('sales date_duplicate'[date]))
+`
+
+### 6. Sales Quantity::
+`
+sales_quantity = SUM('sales transactions_duplicate'[sales_qty])
+`
+
+### 7. Total Profit:
+`
+Total Profit = SUMX('sales transactions_duplicate', [revenue] - [cost_price])
+`
+
+### 8. Total Profit Margin:
+`
+total_profit_margin = SUM('sales transactions_duplicate'[profit_margin])
+`
+
+# Key Findings:
+  ### 1. Strong Revenue and Sales Performance:
+    `Total revenue: ₹984.84 million`
+    `Total sales: 2 million units`
+    
+  ### 2. Geographic Performance:
+    `Top-performing regions: Delhi NCR, Mumbai, Ahmedabad.
+    Bangalore has the lowest sales and revenue.`
+    
+  ### 3. Customer Segmentation:
+    `High-value customers: Electrical Stores.
+    Significant contribution by brick-and-mortar customers.`
+    
+  ### 4. Seasonal Trends:
+    `Peak quarter: Q1
+    Lowest sales quarter: Q3`
