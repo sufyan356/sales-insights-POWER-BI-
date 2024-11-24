@@ -53,7 +53,7 @@
     To enhance the Power BI report, advanced DAX formulas were implemented, enabling deeper insights into sales and profitability.
     Below are key formulas used:
 
-`Profit Margin Contribution Percentage:`
+### Profit Margin Contribution Percentage:
   `
     Profit Margin Contribution Percentage = 
     DIVIDE(
