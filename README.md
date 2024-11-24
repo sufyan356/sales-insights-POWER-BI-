@@ -128,3 +128,8 @@ total_profit_margin = SUM('sales transactions_duplicate'[profit_margin])
   ### 4. Seasonal Trends:
     `Peak quarter: Q1
     Lowest sales quarter: Q3`
+
+# Technologies Used:
+  1. SQL: Data cleaning and standardization.
+  2. Power BI: Data visualization and reporting.
+  3. DAX Formulas: Advanced analytics within Power BI.
